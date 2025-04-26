@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividades de JavaScript</title>
+  </head>
+  <body>
+    <h1>Atividades de JavaScript</h1>
+
+    <div id="mensagem"></div>
+    <div id="soma"></div>
+
+    <input type="text" id="elementoPorId" value="Texto inicial por ID" />
+    <input type="text" name="elementoPorNome" value="Texto inicial por Nome" />
+    <div
+      class="elementoPorClasse"
+      style="background-color: lightblue; padding: 10px"
+    >
+      Elemento por Classe 1
+    </div>
+    <div
+      class="elementoPorClasse"
+      style="background-color: lightcoral; padding: 10px"
+    >
+      Elemento por Classe 2
+    </div>
+
+    <script>
+      document.getElementById("mensagem").innerText = "Olá Mundo!";
+
+      const num1 = 10;
+      const num2 = 5;
+      const resultadoSoma = num1 + num2;
+      document.getElementById(
+        "soma"
+      ).innerText = `A soma de ${num1} + ${num2} é: ${resultadoSoma}`;
+
+      document.getElementById("elementoPorId").style.color = "blue";
+      document.getElementById("elementoPorId").value = "Texto alterado por ID";
+
+      const elementosPorNome = document.getElementsByName("elementoPorNome");
+      if (elementosPorNome.length > 0) {
+        elementosPorNome[0].style.border = "2px solid green";
+        elementosPorNome[0].value = "Texto alterado por Nome";
+      }
+
+      const elementosPorClasse =
+        document.getElementsByClassName("elementoPorClasse");
+      for (let i = 0; i < elementosPorClasse.length; i++) {
+        elementosPorClasse[i].style.fontWeight = "bold";
+        elementosPorClasse[i].style.color = "white";
+      }
+    </script>
+  </body>
+</html>
